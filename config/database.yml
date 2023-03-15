@@ -81,6 +81,6 @@ test:
 #
 production:
   <<: *default
-  database: weather_rails_production
-  username: weather_rails
+  database: weather_rzy8
+  username: rails
   password: <%= ENV['WEATHER_RAILS_DATABASE_PASSWORD'] %>
