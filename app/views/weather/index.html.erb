@@ -1,2 +1,21 @@
-<h1>Weather#index</h1>
-<p>Hello World!</p>
+ <%= javascript_pack_tag 'initMap' %>
+<main>
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Address Search</h1>
+        <p class="lead text-muted">find out local weather below</p>
+        <%= form_for :place, url: places_path  do |f| %>
+          <div class='d-flex'>
+            <div>
+              <div class='form-group'>
+                <%= f.label :address %>
+                <%= f.text_field :address, id:'address', class: 'form-control' %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </section>
+</main>

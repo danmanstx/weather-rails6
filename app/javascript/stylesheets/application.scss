@@ -1,0 +1,11 @@
+// Graphical variables
+@import "./config/fonts";
+@import "./config/colors";
+@import "./config/bootstrap_variables";
+
+// Just a quick ugly style to see if our CSS works
+h1 {
+  text-decoration: underline;
+}
+// External libraries
+@import "~bootstrap/scss/bootstrap";
