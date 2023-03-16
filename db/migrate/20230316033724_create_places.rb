@@ -7,6 +7,8 @@ class CreatePlaces < ActiveRecord::Migration[6.1]
       t.string :address
 
       t.timestamps
+
+      add_index :places, [:latitude, :longitude]
     end
   end
 end
