@@ -75,7 +75,7 @@ two APIs were defined for this project as service objects
 there was/is a sidekiq worker to fire off and populate a forecast, but ultimately wasn't used in the final app. the job was left behind for possible future development. 
 
 
-## Deployment to [Render](render.com)
+## Deployment to [Render](https://render.com)
 
 this is actually super easy, after creating an account, you can use the free teir for a web service, redis, and postgresql. From there you can connect your github account to render, and use the supplied urls for both psql and redis as `env` vars. 
 
