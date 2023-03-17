@@ -83,3 +83,4 @@ there was/is a sidekiq worker to fire off and populate a forecast, but ultimatel
 this ending up being pretty easy, after creating an account, you can use the free tier for a web service, redis, and postgresql. From there you can connect your github account to render, and use the supplied urls for both psql and redis as `env` vars. 
 
 #### the live demo is available at [weather-rails](https://weather-rails.onrender.com)
+might be slow on first boot as app goes to sleep and new container needs to spin up.
