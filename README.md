@@ -29,6 +29,14 @@ similarly with the various db/redis/api keys, i used `.dotenv` locally to store 
 ## `ENV VARS` needed 
 
 ```
+WEATHER_RAILS_DATABASE_PASSWORD=xxxxxxxxx
+REDIS_URL=redis://server:6379/1
+RAILS_MAX_THREADS=4
+NODE_ENV=<env>
+RACK_ENV=<env>
+RAILS_ENV=<env>
+GOOGLE_PLACE_API=xxxxxxxxxxxxxxxxxxxxxxxxxxx
+OPEN_WEATHER_API=xxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
 ## database creation 
@@ -40,6 +48,16 @@ bundle exec rails db:create
 bundle exec rails db:migrate 
 ``` 
 
+## running the server locally
+i created an alias to made sure webpacker and node ran smoothly, basically adding `NODE_OPTIONS=--openssl-legacy-provider` if you get issues about openssl and legacy versions. If you don't wanna do that, `node 16` or similar will likely work.
+In one terminal i'd run
+`NODE_OPTIONS=--openssl-legacy-provider ./bin/webpack-dev-server`
+another 
+`rails s`
+and when messing with sidekiq in another
+`bundle exec sidekiq`
+
+This can also be accomplished with a `.proc` file and run with foreman
 
 ## Test Suite
 the app is using `rspec` for testing, following commands will run worth for the first run, after that you should just be able to run the `rspec` command, `RAILS_ENV=test bundle exec` in front can never hurt too
