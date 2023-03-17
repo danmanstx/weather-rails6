@@ -5,8 +5,9 @@
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Zipcocde</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Zipcode</th>
       <th>Latitude</th>
       <th>Longitude</th>
       <th>Address</th>
@@ -17,7 +18,8 @@
   <tbody>
     <% @places.each do |place| %>
       <tr>
-        <td><%= place.name %></td>
+        <td><%= place.city %></td>
+        <td><%= place.state %></td>
         <td><%= place.zipcode %></td>
         <td><%= place.latitude %></td>
         <td><%= place.longitude %></td>

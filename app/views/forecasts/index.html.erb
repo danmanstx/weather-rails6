@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Forecasts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Current temp</th>
+      <th>High temp</th>
+      <th>Low temp</th>
+      <th>Zipcode</th>
+      <th>Place</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @forecasts.each do |forecast| %>
+      <tr>
+        <td><%= forecast.current_temp %></td>
+        <td><%= forecast.high_temp %></td>
+        <td><%= forecast.low_temp %></td>
+        <td><%= forecast.zipcode %></td>
+        <td><%= forecast.place_id %></td>
+        <td><%= link_to 'Show', place_forecast_path(forecast.place_id, id: forecast.id) %></td>
+        <td><%= link_to 'Edit', edit_place_forecast_path(forecast.place.id, id: forecast.id) %></td>
+        <td><%= link_to 'Destroy', forecast, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Forecast', new_forecast_path %>

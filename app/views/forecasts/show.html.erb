@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<h3>Weather forecast for Zipcode: <%= @forecast.zipcode %></h3>
+
+<h5><%= @forecast.details %></h5>
+
+<p>
+  <strong>Current temp:</strong>
+  <%= @forecast.current_temp %>
+</p>
+
+<% unless @forecast.feels_like.blank? %>
+<p>
+  <strong>Feels like:</strong>
+  <%= @forecast.feels_like %>
+</p>
+<% end %>
+
+<p>
+  <strong>High temp:</strong>
+  <%= @forecast.high_temp %>
+</p>
+
+<p>
+  <strong>Low temp:</strong>
+  <%= @forecast.low_temp %>
+</p>
+
+
+
+<%
+=begin%>
+ <p>
+  <strong>Place:</strong>
+  <%= @forecast.place_id %>
+</p>
+<%
+=end%>
+<% if params[:cache_hit] %>
+<p>
+  <strong>cache hit:</strong>
+  <%= params[:cache_hit] %>
+</p>
+<% end %>

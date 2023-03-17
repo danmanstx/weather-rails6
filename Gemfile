@@ -18,6 +18,9 @@ gem 'bootstrap', '~> 5.2.2'
 gem 'popper_js', '~> 2.11.5'
 gem 'jquery-rails'
 gem 'geocoder'
+gem "httpparty", "~> 0.2.0"
+gem "sidekiq", "~> 7.0"
+gem 'daemons'
 
 gem 'bootsnap', '>= 1.4.4', require: false
 

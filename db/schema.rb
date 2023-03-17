@@ -10,10 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_03_16_184232) do
+ActiveRecord::Schema.define(version: 2023_03_17_042817) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "forecasts", force: :cascade do |t|
+    t.string "current_temp"
+    t.string "high_temp"
+    t.string "low_temp"
+    t.string "zipcode"
+    t.bigint "place_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "details"
+    t.string "icon"
+    t.string "feels_like"
+    t.string "wind_speed"
+    t.string "wind_direction"
+    t.index ["place_id"], name: "index_forecasts_on_place_id"
+  end
 
   create_table "places", force: :cascade do |t|
     t.string "name"
@@ -23,7 +39,10 @@ ActiveRecord::Schema.define(version: 2023_03_16_184232) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "zipcode"
+    t.string "state"
+    t.string "city"
     t.index ["latitude", "longitude"], name: "index_places_on_latitude_and_longitude"
   end
 
+  add_foreign_key "forecasts", "places"
 end
