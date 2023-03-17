@@ -50,10 +50,13 @@ bundle exec rails db:migrate
 
 ## running the server locally
 i created an alias to made sure webpacker and node ran smoothly, basically adding `NODE_OPTIONS=--openssl-legacy-provider` if you get issues about openssl and legacy versions. If you don't wanna do that, `node 16` or similar will likely work.
+
 In one terminal i'd run
 `NODE_OPTIONS=--openssl-legacy-provider ./bin/webpack-dev-server`
+
 another 
 `rails s`
+
 and when messing with sidekiq in another
 `bundle exec sidekiq`
 
