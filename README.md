@@ -60,7 +60,7 @@ and when messing with sidekiq in another
 This can also be accomplished with a `.proc` file and run with foreman
 
 ## Test Suite
-the app is using `rspec` for testing, following commands will run worth for the first run, after that you should just be able to run the `rspec` command, `RAILS_ENV=test bundle exec` in front can never hurt too
+the app is using `rspec` for testing, following commands will run work for the first run, after that you should just be able to run the `rspec` command, `RAILS_ENV=test bundle exec` in front can never hurt too
 ```
 RAILS_ENV=test bundle exec rails db:create
 RAILS_ENV=test bundle exec rails db:migrate
@@ -77,6 +77,6 @@ there was/is a sidekiq worker to fire off and populate a forecast, but ultimatel
 
 ## Deployment to [Render](https://render.com)
 
-this is actually super easy, after creating an account, you can use the free teir for a web service, redis, and postgresql. From there you can connect your github account to render, and use the supplied urls for both psql and redis as `env` vars. 
+this ending up being pretty easy, after creating an account, you can use the free tier for a web service, redis, and postgresql. From there you can connect your github account to render, and use the supplied urls for both psql and redis as `env` vars. 
 
 #### the live demo is available at [weather-rails](https://weather-rails.onrender.com)
